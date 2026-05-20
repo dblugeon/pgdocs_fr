@@ -5274,15 +5274,10 @@ EXPLAIN SELECT count(*) FROM measurement WHERE date_trace &gt;= DATE '2008-01-01
        dans l'<command>EXPLAIN</command> ou l'<command>EXPLAIN
        ANALYZE</command> de la requête. Il est même possible de déterminer le
        nombre de partitions supprimées pendant cette phase en observant la
-       propriété <quote>Subplans Removed</quote>(sous-plans supprimés) dans
-       la sortie d'<command>EXPLAIN</command>.
-       The query planner obtains locks for
-       all partitions which are part of the plan.  However, when the executor
-       uses a cached plan, locks are only obtained on the partitions which
-       remain after partition pruning done during the initialization phase of
-       execution, i.e., the ones shown in the <command>EXPLAIN</command>
-       output and not the ones referred to by the
-       <quote>Subplans Removed</quote> property.
+       propriété <quote>Subplans Removed</quote> (sous-plans supprimés) dans
+       la sortie d'<command>EXPLAIN</command>. Il est important de noter que
+       toute partition supprimée par l'élagage de partition faite à ce moment
+       est toujours verrouillée au début de l'exécution.
       </para>
      </listitem>
 

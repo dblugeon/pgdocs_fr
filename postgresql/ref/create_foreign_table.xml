@@ -232,10 +232,10 @@ WITH ( MODULUS <replaceable class="parameter">literal_numeric</replaceable>, REM
         <term><literal>INCLUDING COMMENTS</literal></term>
         <listitem>
          <para>
-          Les commentaires des colonnes et contraintes seront copiés.
-          Le comportement par défaut est d'exclure les commentaires, résultant
-          à ce que les colonnes et contraintes copiées dans la nouvelle table
-          n'ont pas de commentaires.
+          Les commentaires des colonnes, contraintes et statistiques étendues
+          seront copiés. Le comportement par défaut est d'exclure les
+          commentaires. De ce fait, les objets concernés n'ont pas de
+          commentaires.
          </para>
         </listitem>
        </varlistentry>
